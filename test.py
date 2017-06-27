@@ -189,7 +189,7 @@ def opendata(url1, edg, h,fod, od1, od2):
             				#change
             			sum2[0]=sum2[0]+1
             			f=open("temp.csv",'a')
-            			f.write(name+','+str(ed1)+','+fr+','+wilo+'\n') #change
+            			f.write(name+','+str(ed1)+','+fr+','+wilo+','+str(a1)+'\n') #change
             			f.close()
             			
             		elif (fod=="FAV"):
@@ -200,7 +200,7 @@ def opendata(url1, edg, h,fod, od1, od2):
             			sum2[0]=sum2[0]+1
             			if(q1>q2) and (q1>q3):
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(ed1)+','+fr+','+wilo+'\n') #change 
+            				f.write(name+','+str(ed1)+','+fr+','+wilo+','+str(a1)+'\n') #change 
             				f.close()
             				
             		elif (fod=="DOG"):
@@ -211,7 +211,7 @@ def opendata(url1, edg, h,fod, od1, od2):
             			sum2[0]=sum2[0]+1
             			if(q1<q2) and (q1<q3):
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(ed1)+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(ed1)+','+fr+','+wilo+','+str(a1)+'\n') #change
             				f.close()
             				
             if (h=="DRAW") and (od1<=a2) and (od2>=a2):
@@ -221,7 +221,7 @@ def opendata(url1, edg, h,fod, od1, od2):
             			wilo="WIN"
             		sum2[0]=sum2[0]+1
             		f=open("temp.csv",'a')
-            		f.write(name+','+str(ed2)+','+fr+','+wilo+'\n') #change
+            		f.write(name+','+str(ed2)+','+fr+','+wilo+','+str(a2)+'\n') #change
             		f.close()
 
             				
@@ -234,7 +234,7 @@ def opendata(url1, edg, h,fod, od1, od2):
             				#change
             			sum2[0]=sum2[0]+1
             			f=open("temp.csv",'a')
-            			f.write(name+','+str(ed3)+','+fr+','+wilo+'\n') #change
+            			f.write(name+','+str(ed3)+','+fr+','+wilo+','+str(a3)+'\n') #change
             			f.close()
             			
             		elif (fod=="FAV"):
@@ -245,7 +245,7 @@ def opendata(url1, edg, h,fod, od1, od2):
             			sum2[0]=sum2[0]+1
             			if(q3>q2) and (q3>q1):
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(ed3)+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(ed3)+','+fr+','+wilo+','+str(a3)+'\n') #change
             				f.close()
             				
             		elif (fod=="DOG"):
@@ -256,69 +256,100 @@ def opendata(url1, edg, h,fod, od1, od2):
             			sum2[0]=sum2[0]+1
             			if(q3<q1) and (q3<q2):
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(ed3)+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(ed3)+','+fr+','+wilo+','+str(a3)+'\n') #change
             				f.close()
             				
             elif (h=="ALL") and (od1<=a2) and (od2>=a2) and (od1<=a1) and (od2>=a1) and (od1<=a3) and (od2>=a3):
-            	sum2[1]=sum2[1]+a1+a2+a3
-            	wilo="WIN"
-            	sum2[0]=sum2[0]+3
+            	
             	if(ed1>=edg):
+
+            		sum2[0]=sum2[0]+1
             		if (fod=="NA"):
+            			if(fr1>fr2):
+            				sum2[1]=sum2[1]+a1
+            				wilo="WIN"
             			f=open("temp.csv",'a')
-            			f.write(name+','+str(ed1)+','+fr+','+wilo+'\n') #change
+            			f.write(name+','+str(ed1)+','+fr+','+wilo+','+str(a1)+'\n') #change
             			f.close()
             			
             		elif (fod=="FAV"):
+            			if(fr1>fr2):
+            				sum2[1]=sum2[1]+a1
+            				wilo="WIN"
             			
             			if(q1>q2) and (q1>q3):
             				
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(ed1)+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(ed1)+','+fr+','+wilo+','+str(a1)+'\n') #change
             				f.close()
             				
             		elif (fod=="DOG"):
+            			if(fr1>fr2):
+            				sum2[1]=sum2[1]+a1
+            				wilo="WIN"
             			if(q1<q2) and (q1<q3):
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(ed1)+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(ed1)+','+fr+','+wilo+','+str(a1)+'\n') #change
             				f.close()
             				
 
             	if(ed3>=edg):
+
+            		sum2[0]=sum2[0]+1
             		if (fod=="NA"):
+            			if(fr1<fr2):
+            				sum2[1]=sum2[1]+a3
+            				wilo="WIN"
             			f=open("temp.csv",'a')
-            			f.write(name+','+str(ed3)+','+fr+','+wilo+'\n') #change
+            			f.write(name+','+str(ed3)+','+fr+','+wilo+','+str(a3)+'\n') #change
             			f.close()
             			
             		elif (fod=="FAV"):
+            			if(fr1<fr2):
+            				sum2[1]=sum2[1]+a3
+            				wilo="WIN"
             			if(q3>q2) and (q3>q1):
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(ed3)+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(ed3)+','+fr+','+wilo+','+str(a3)+'\n') #change
             				f.close()
             				
             		elif (fod=="DOG"):
+            			if(fr1<fr2):
+            				sum2[1]=sum2[1]+a3
+            				wilo="WIN"
             			if(q3<q1) and (q3<q2):
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(ed3)+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(ed3)+','+fr+','+wilo+','+str(a3)+'\n') #change
             				f.close()
             				
 
             	if(ed2>=edg):
+
+            		sum2[0]=sum2[0]+1
             		if (fod=="NA"):
+            			if(fr1==fr2):
+            				sum2[1]=sum2[1]+a2
+            				wilo="WIN"
             			f=open("temp.csv",'a')
-            			f.write(name+','+str(ed2)+','+fr+','+wilo+'\n') #change
+            			f.write(name+','+str(ed2)+','+fr+','+wilo+','+str(a2)+'\n') #change
             			f.close()
             			
             		elif (fod=="FAV"):
+            			if(fr1==fr2):
+            				sum2[1]=sum2[1]+a2
+            				wilo="WIN"
             			if(q2>q1) and (q2>q1):
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(ed2)+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(ed2)+','+fr+','+wilo+','+str(a2)+'\n') #change
             				f.close()
             				
             		elif (fod=="DOG"):
+            			if(fr1==fr2):
+            				sum2[1]=sum2[1]+a1
+            				wilo="WIN"
             			if(q2<q1) and (q2<q3):
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(ed2)+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(ed2)+','+fr+','+wilo+','+str(a2)+'\n') #change
             				f.close()
             				
 
@@ -332,10 +363,10 @@ def opendata(url1, edg, h,fod, od1, od2):
             			if(fr1>=fr2):
             				sum2[1]=sum2[1]+a1
             				wilo="WIN"
-            				#change+a2
-            			sum2[0]=sum2[0]+2
+            				#change
+            			sum2[0]=sum2[0]+1
             			f=open("temp.csv",'a')
-            			f.write(name+','+str(edd)[0:4]+','+fr+','+wilo+'\n') #change
+            			f.write(name+','+str(edd)[0:4]+','+fr+','+wilo+','+str((a1+a2)/2)+'\n') #change
             			f.close()
             			
             		elif (fod=="FAV"):
@@ -343,12 +374,12 @@ def opendata(url1, edg, h,fod, od1, od2):
             				sum2[1]=sum2[1]+a1
             				wilo="WIN"
             				#change+a2
-            			sum2[0]=sum2[0]+2
+            			sum2[0]=sum2[0]+1
             			
             			if(q1>q2) and (q1>q3):
             				
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(edd)[0:4]+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(edd)[0:4]+','+fr+','+wilo+','+str((a1+a2)/2)+'\n') #change
             				f.close()
             				
             		elif (fod=="DOG"):
@@ -356,10 +387,10 @@ def opendata(url1, edg, h,fod, od1, od2):
             				sum2[1]=sum2[1]+a1
             				wilo="WIN"
             				#change+a2
-            			sum2[0]=sum2[0]+2
+            			sum2[0]=sum2[0]+1
             			if(q1<q2) and (q1<q3):
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(edd)[0:4]+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(edd)[0:4]+','+fr+','+wilo+','+str((a1+a2)/2)+'\n') #change
             				f.close()
 
             elif(h=="12") and (od1<=(a3+a1)/2) and (od2>=(a3+a1)/2):
@@ -369,9 +400,9 @@ def opendata(url1, edg, h,fod, od1, od2):
             				sum2[1]=sum2[1]+a1
             				wilo="WIN"
             				#change+a3
-            			sum2[0]=sum2[0]+2
+            			sum2[0]=sum2[0]+1
             			f=open("temp.csv",'a')
-            			f.write(name+','+str(ed1)+','+fr+','+wilo+'\n') #change
+            			f.write(name+','+str(ed1)+','+fr+','+wilo+','+str(a1)+'\n') #change
             			f.close()
             			
             		elif (fod=="FAV"):
@@ -379,12 +410,12 @@ def opendata(url1, edg, h,fod, od1, od2):
             				sum2[1]=sum2[1]+a1
             				wilo="WIN"
             				#change+a3
-            			sum2[0]=sum2[0]+2
+            			sum2[0]=sum2[0]+1
             			
             			if(q1>q2) and (q1>q3):
             				
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(ed1)+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(ed1)+','+fr+','+wilo+','+str(a1)+'\n') #change
             				f.close()
             				
             		elif (fod=="DOG"):
@@ -392,44 +423,44 @@ def opendata(url1, edg, h,fod, od1, od2):
             				sum2[1]=sum2[1]+a1
             				wilo="WIN"
             				#change+a3
-            			sum2[0]=sum2[0]+2
+            			sum2[0]=sum2[0]+1
             			if(q1<q2) and (q1<q3):
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(ed1)+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(ed1)+','+fr+','+wilo+','+str(a1)+'\n') #change
             				f.close()
             				
 
             	if(ed3>=edg):
             		if (fod=="NA"):
             			if((fr1>fr2) or (fr1<fr2)):
-            				sum2[1]=sum2[1]+a1
+            				sum2[1]=sum2[1]+a3
             				wilo="WIN"
             				#change+a3
-            			sum2[0]=sum2[0]+2
+            			sum2[0]=sum2[0]+1
             			f=open("temp.csv",'a')
-            			f.write(name+','+str(ed3)+','+fr+','+wilo+'\n') #change
+            			f.write(name+','+str(ed3)+','+fr+','+wilo+','+str(a3)+'\n') #change
             			f.close()
             			
             		elif (fod=="FAV"):
             			if((fr1>fr2) or (fr1<fr2)):
-            				sum2[1]=sum2[1]+a1
+            				sum2[1]=sum2[1]+a3
             				wilo="WIN"
             				#change+a3
-            			sum2[0]=sum2[0]+2
+            			sum2[0]=sum2[0]+1
             			if(q3>q2) and (q3>q1):
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(ed3)+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(ed3)+','+fr+','+wilo+','+str(a3)+'\n') #change
             				f.close()
             				
             		elif (fod=="DOG"):
             			if((fr1>fr2) or (fr1<fr2)):
-            				sum2[1]=sum2[1]+a1
+            				sum2[1]=sum2[1]+a3
             				wilo="WIN"
             				#change+a3
-            			sum2[0]=sum2[0]+2
+            			sum2[0]=sum2[0]+1
             			if(q3<q1) and (q3<q2):
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(ed3)+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(ed3)+','+fr+','+wilo+','+str(a3)+'\n') #change
             				f.close()
 
 
@@ -443,9 +474,9 @@ def opendata(url1, edg, h,fod, od1, od2):
             				sum2[1]=sum2[1]+a2
             				wilo="WIN"
             				#change+a3
-            			sum2[0]=sum2[0]+2
+            			sum2[0]=sum2[0]+1
             			f=open("temp.csv",'a')
-            			f.write(name+','+str(edd)[0:4]+','+fr+','+wilo+'\n') #change
+            			f.write(name+','+str(edd)[0:4]+','+fr+','+wilo+','+sstr((a3+a2)/2)+'\n') #change
             			f.close()
             			
             		elif (fod=="FAV"):
@@ -453,10 +484,10 @@ def opendata(url1, edg, h,fod, od1, od2):
             				sum2[1]=sum2[1]+a2
             				wilo="WIN"
             				#change+a3
-            			sum2[0]=sum2[0]+2
+            			sum2[0]=sum2[0]+1
             			if(q3>q2) and (q3>q1):
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(edd)[0:4]+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(edd)[0:4]+','+fr+','+wilo+','+str((a3+a2)/2)+'\n') #change
             				f.close()
             				
             		elif (fod=="DOG"):
@@ -464,18 +495,18 @@ def opendata(url1, edg, h,fod, od1, od2):
             				sum2[1]=sum2[1]+a2
             				wilo="WIN"
             				#change+a3
-            			sum2[0]=sum2[0]+2
+            			sum2[0]=sum2[0]+1
             			if(q3<q1) and (q3<q2):
             				f=open("temp.csv",'a')
-            				f.write(name+','+str(edd)[0:4]+','+fr+','+wilo+'\n') #change
+            				f.write(name+','+str(edd)[0:4]+','+fr+','+wilo+','+str((a3+a2)/2)+'\n') #change
             				f.close()
             				          
             				 	
         return sum2
-of=input("Enter online(0) or offline(1): ")
-date1=str(input("enter from date(dd-mm-yyyy): ")).strip().split("-")
-date2=str(input("enter to date(dd-mm-yyyy): ")).strip().split("-")
-edg=float(input("Enter edge value: "))
+of="1"
+date1=str("15-04-2017").strip().split("-")
+date2=str("15-04-2017").strip().split("-")
+edg=float(10)
 h=input("enter home/draw/away/all/1x/x2/12: ")
 fod=input("enter fav or dog: ")
 od1=float(input("Enter odd value(min): ")) #change
